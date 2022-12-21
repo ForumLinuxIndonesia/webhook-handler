@@ -1,5 +1,5 @@
 services:
-  fe:
+  webhook:
     image: "waxarsatia/webhook-handler:latest"
     network_mode: bridge
     ports:
