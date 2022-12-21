@@ -9,3 +9,6 @@ networks:
   default:
     name: "gacha"
     external: true
+
+extra_hosts:
+  - "host.docker.internal:host-gateway"
