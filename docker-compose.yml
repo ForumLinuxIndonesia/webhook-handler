@@ -1,5 +1,7 @@
 services:
   webhook:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     image: "waxarsatia/webhook-handler:latest"
     ports:
       - "9999:80"
@@ -9,6 +11,3 @@ networks:
   default:
     name: "gacha"
     external: true
-
-extra_hosts:
-  - "host.docker.internal:host-gateway"
