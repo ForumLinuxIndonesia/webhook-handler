@@ -1,0 +1,6 @@
+services:
+  fe:
+    image: "waxarsatia/webhook-handler:latest"
+    network_mode: bridge
+    ports:
+      - "9999:80"
