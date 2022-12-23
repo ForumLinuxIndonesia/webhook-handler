@@ -1,6 +1,7 @@
 .git
 .github
 .gitignore
+.husky
 docker-compose.yml
 LICENSE
 node_modules
