@@ -1,6 +1,7 @@
 .git
-.gitignore
 .github
+.gitignore
+docker-compose.yml
+LICENSE
 node_modules
 README.md
-docker-compose.yml

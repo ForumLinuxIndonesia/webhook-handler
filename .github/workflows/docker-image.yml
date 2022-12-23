@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v3.2.0
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/webhook-handler:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE }}:latest
       -
         name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v2

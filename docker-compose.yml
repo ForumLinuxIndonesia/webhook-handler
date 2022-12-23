@@ -1,13 +1,16 @@
 services:
-  webhook:
+  app:
+    environment:
+      - HOST_PORT
+      - LISTEN_PORT
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    image: "waxarsatia/webhook-handler:latest"
+    image: "${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:latest"
     ports:
-      - "9999:80"
+      - "${DOCKER_FORWARD_PORT}:${DOCKER_LISTEN_PORT}"
     restart: unless-stopped
 
 networks:
   default:
-    name: "gacha"
+    name: "${DOCKER_NETWORK}"
     external: true
