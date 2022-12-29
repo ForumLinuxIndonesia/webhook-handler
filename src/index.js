@@ -4,6 +4,7 @@ import express from 'express';
 const app = express();
 
 app.post('*', (req, res) => {
+  if (!req.url.startsWith('/api/stacks/webhooks/')) return res.status(403);
   res.sendStatus(200);
   console.log('New Trigger to', req.url);
   axios.post(`http://host.docker.internal:${process.env.HOST_PORT}${req.url}`)
@@ -15,6 +16,7 @@ app.post('*', (req, res) => {
       console.warn('Failed to redeploy');
       console.warn(err.response.data);
     });
+  return undefined;
 });
 
 app.listen(Number(process.env.LISTEN_PORT) || 3000, () => console.log(`Proxy ready on port ${process.env.LISTEN_PORT || 3000}`));
