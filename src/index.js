@@ -14,7 +14,7 @@ app.post('*', (req, res) => {
     })
     .catch((err) => {
       console.warn('Failed to redeploy');
-      console.warn(err.response.data);
+      console.warn(err);
     });
   return undefined;
 });
